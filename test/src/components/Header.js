@@ -1,7 +1,7 @@
-/*import './Header.css';*/
 import React, { Component } from 'react';
+import './Header.css';
 import logo from '../img/refugios-libres.jpg';
-import Salutacio from './Salutacio.js';
+import LoginControl from './LoginControl.js';
 
 class Header extends Component {
     render() {
@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <h1 className="salutacio">
                 <img src={logo} height="50px" alt=""/> El teu portal de montanya 
-                <Salutacio nick={usuari}/> </h1>
+                <LoginControl nick={usuari}/> </h1>
         )
     }
 }

@@ -1,22 +1,27 @@
 import './App.css';
-import Header from './Header';
 import FunctionalComponent from './FunctionalComponent.js';
 import ClassComponent from './ClassComponent';
+import FunctionalComponent1 from './FunctionalComponent1.js';
+import {useState} from 'react';
 
 function App() {
 
   const propFunc1 = "Holi";
 
   const objecteExemple = {
-    nom: "Anna",
-    edat: 19
+    nom: "Marina",
+    edat: 31
   }
 
+  const [data, setData] = useState("");
+
+  const childToParent = (dataFromChild) => {
+    console.log("child to parent", dataFromChild);
+    setData(dataFromChild);
+  }
+  
   return (
     <>
-      <div className='bg-primary card'>
-        <Header/>
-      </div>
       <br/>
       <div>
         <FunctionalComponent
@@ -36,6 +41,11 @@ function App() {
             propsFunctional3Number = { 5 }
             propsFunctional4Object = { objecteExemple }
             />
+      </div>
+      <div>
+          {data}
+          <FunctionalComponent1 childToParent = { childToParent }
+          />
       </div>
     </>
     );
